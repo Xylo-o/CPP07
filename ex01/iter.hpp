@@ -3,18 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 19:06:06 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/12/15 19:08:36 by adprzyby         ###   ########.fr       */
+/*   Updated: 2025/01/02 14:52:13 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <string>
 #include <iostream>
+#include <algorithm>
 #include "Colors.hpp"
 
-template <typename Iter> void iter(Iter arg1, Iter arg2, Iter arg3) {
-	
+template <typename Iter, typename Ft> 
+void iter(Iter adr, int len, Ft ft) {
+	for (int i = 0; i < len; ++i) {
+        ft(adr[i]);
+    }
 }
