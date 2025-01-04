@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   whatever.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/15 17:42:28 by adprzyby          #+#    #+#             */
-/*   Updated: 2025/01/04 10:30:47 by kali             ###   ########.fr       */
+/*   Created: 2025/01/04 10:26:56 by kali              #+#    #+#             */
+/*   Updated: 2025/01/04 10:29:46 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include <iostream>
-#include <string>
-#include "Colors.hpp"
+# include "whatever.hpp"
 
 template <typename Swap> 
-void mySwap(Swap& arg1, Swap& arg2) {};
+void mySwap(Swap& arg1, Swap& arg2) {
+	Swap tmp;
+	tmp = arg1;
+	arg1 = arg2;
+	arg2 = tmp;
+}
 
 template <typename Min>
-Min myMin(Min& arg1, Min& arg2) {};
+Min myMin(Min& arg1, Min& arg2) {
+	return (arg1 < arg2) ? arg1 : arg2;
+}
 
 template <typename Max>
-Max myMax(Max& arg1, Max& arg2) {};
+Max myMax(Max& arg1, Max& arg2) {
+	return (arg1 > arg2) ? arg1 : arg2;
+}
