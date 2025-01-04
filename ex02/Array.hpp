@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/15 17:42:28 by adprzyby          #+#    #+#             */
-/*   Updated: 2025/01/04 15:53:58 by kali             ###   ########.fr       */
+/*   Created: 2025/01/04 14:49:58 by kali              #+#    #+#             */
+/*   Updated: 2025/01/04 15:51:56 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <iostream>
-#include <string>
 #include "Colors.hpp"
+#include <iostream>
+#include <stdexcept>
 
-template <typename Swap> 
-void mySwap(Swap& arg1, Swap& arg2) {
-	Swap tmp;
-	tmp = arg1;
-	arg1 = arg2;
-	arg2 = tmp;
+template <typename T>
+class Array {
+    public:
+        Array();
+        Array(unsigned int n);
+        Array(const Array& other);
+        Array& operator=(const Array& other);
+        T& operator new[](unsigned int index);
+        ~Array();
+        
+        unsigned int getSize() const;
+    private:
+        T* elements;
+        size_t size;
 }
 
-template <typename Min>
-Min myMin(Min& arg1, Min& arg2) {
-	return (arg1 < arg2) ? arg1 : arg2;
-}
-
-template <typename Max>
-Max myMax(Max& arg1, Max& arg2) {
-	return (arg1 > arg2) ? arg1 : arg2;
-}
+#include "Array.tpp"
