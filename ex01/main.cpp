@@ -6,12 +6,11 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 19:05:55 by adprzyby          #+#    #+#             */
-/*   Updated: 2025/01/15 06:33:08 by adprzyby         ###   ########.fr       */
+/*   Updated: 2025/01/15 07:42:16 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
-using namespace std;
 
 template <typename T>
 void bubbleSort(T a[], int len) {
@@ -23,7 +22,7 @@ void bubbleSort(T a[], int len) {
 
 template <typename T>
 void printElement(T& element) {
-    cout << BLUE << "The element: " << NC << element << endl;
+    std::cout << BLUE << "The element: " << NC << element << std::endl;
 }
 
 int main () {
@@ -31,32 +30,32 @@ int main () {
     int arr1[] = {5, 3, 1, -2 ,6};
     double arr2[] = {5.3, 3.7, 1.5, -2.1, 6.2};     
     char arr3[] = {'d', 'f', 's', 'u', 'o'};     
-    string arr4[] = {"defg", "rtuy", "abcd", "qwerty", "lalala"};
+    std::string arr4[] = {"defg", "rtuy", "abcd", "qwerty", "lalala"};
 
-    cout << YELLOW << "=================BEFORE SORTING=================" << NC << endl;
+    std::cout << YELLOW << "=================BEFORE SORTING=================" << NC << std::endl;
 
     iter(arr1, 5, printElement<int>);
-    cout << MAGENTA << "===============================================" << NC << endl;
+    std::cout << MAGENTA << "===============================================" << NC << std::endl;
     iter(arr2, 5, printElement<double>);
-    cout << MAGENTA << "===============================================" << NC << endl;
+    std::cout << MAGENTA << "===============================================" << NC << std::endl;
     iter(arr3, 5, printElement<char>);
-    cout << MAGENTA << "===============================================" << NC << endl;
-    iter(arr4, 5, printElement<string>);
+    std::cout << MAGENTA << "===============================================" << NC << std::endl;
+    iter(arr4, 5, printElement<std::string>);
 
     bubbleSort(arr1, 5);
     bubbleSort(arr2, 5);
     bubbleSort(arr3, 5);
     bubbleSort(arr4, 5);
 
-    cout << YELLOW << "=================AFTER SORTING=================" << NC << endl;
+    std::cout << YELLOW << "=================AFTER SORTING=================" << NC << std::endl;
 
     iter(arr1, 5, printElement<int>);
-    cout << MAGENTA << "===============================================" << NC << endl;
+    std::cout << MAGENTA << "===============================================" << NC << std::endl;
     iter(arr2, 5, printElement<double>);
-    cout << MAGENTA << "===============================================" << NC << endl;
+    std::cout << MAGENTA << "===============================================" << NC << std::endl;
     iter(arr3, 5, printElement<char>);
-    cout << MAGENTA << "===============================================" << NC << endl;
-    iter(arr4, 5, printElement<string>);
+    std::cout << MAGENTA << "===============================================" << NC << std::endl;
+    iter(arr4, 5, printElement<std::string>);
     
     return 0;
 }
