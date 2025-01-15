@@ -3,32 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/04 14:49:58 by kali              #+#    #+#             */
-/*   Updated: 2025/01/04 15:51:56 by kali             ###   ########.fr       */
+/*   Created: 2025/01/04 14:49:58 by adprzyby          #+#    #+#             */
+/*   Updated: 2025/01/15 06:33:21 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include "Colors.hpp"
-#include <iostream>
+#include <cstddef>
 #include <stdexcept>
 
 template <typename T>
 class Array {
-    public:
-        Array();
-        Array(unsigned int n);
-        Array(const Array& other);
-        Array& operator=(const Array& other);
-        T& operator new[](unsigned int index);
-        ~Array();
-        
-        unsigned int getSize() const;
-    private:
-        T* elements;
-        size_t size;
-}
+public:
+    Array();
+    Array(unsigned int n);
+    Array(const Array& other);
+    Array& operator=(const Array& other);
+    ~Array();
+
+    T& operator[](std::size_t index);
+    const T& operator[](std::size_t index) const;
+
+    std::size_t size() const;
+private:
+    T* _elements;
+    std::size_t _size;
+};
 
 #include "Array.tpp"
