@@ -6,7 +6,7 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 19:05:55 by adprzyby          #+#    #+#             */
-/*   Updated: 2025/01/15 07:42:16 by adprzyby         ###   ########.fr       */
+/*   Updated: 2025/01/20 14:25:52 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void bubbleSort(T a[], int len) {
     for (int i = 0; i < len - 1; i++)
         for (int j = len - 1; i < j; j--)
             if (a[j] < a[j - 1])
-                swap(a[j], a[j - 1]);
+                std::swap(a[j], a[j - 1]);
 }
 
 template <typename T>
